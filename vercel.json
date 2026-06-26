@@ -1,13 +1,18 @@
 {
   "version": 2,
   "cleanUrls": true,
+  "functions": {
+    "api/server.js": {
+      "maxDuration": 30
+    }
+  },
   "rewrites": [
     {
       "source": "/assets/(.*)",
       "destination": "/assets/$1"
     },
     {
-      "source": "/((?!assets/|.*\\..*).*)" ,
+      "source": "/((?!assets/|.*\\..*|api/).*)$",
       "destination": "/api/server"
     }
   ]
